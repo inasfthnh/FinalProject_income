@@ -149,11 +149,11 @@ def run_ml_app():
 
         if prediction == 0:
             st.info("""
-                Hasil Prediksi Income :\n
-                '<= 50K' [Gaji kurang dari atau sama dengan 50,000 dollar]
+                Hasil Prediksi Income : <= 50K \n
+                Gaji kurang dari atau sama dengan 50,000 dollar
                 """)
         elif prediction == 1:
             st.info("""
-                Hasil Prediksi Income :\n
-                '> 50K' [Gaji lebih dari 50,000 dollar]
+                Hasil Prediksi Income : > 50K \n
+                Gaji lebih dari 50,000 dollar
                 """)
