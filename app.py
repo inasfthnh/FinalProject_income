@@ -13,7 +13,7 @@ html_temp = """
 
 desc_temp = """
             ### Citizens Income Prediction App
-            This app will be used by the government to predict whether the personal income would be over 50K or not.
+            This app will be used for business purposes to predict whether the personal income would be over 50K or not.
             #### Data Source
             - https://www.kaggle.com/datasets/tawfikelmetwally/census-income-dataset
             #### App Content
