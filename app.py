@@ -49,11 +49,11 @@ def main():
                     </div>
                     """
                  )
-        st.subheader('Final Project Fantastic Four', divider = 'grey')
+        st.subheader('Final Project Fantastic Four', divider = "grey")
         choice = st.selectbox("Menu", menu)
 
     if choice == 'Home':
-        st.subheader("Welcome to Homepage", divider = 'grey')
+        st.subheader("Welcome to Homepage", divider = "grey")
         st.markdown(desc_temp)
     elif choice == "Machine Learning":
         # st.subheader("Welcome to Machine learning")
