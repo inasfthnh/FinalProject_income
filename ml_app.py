@@ -10,8 +10,8 @@ import os
 
 attribute_info = """
                 Penjelasan untuk tiap-tiap kolom :
-                - age: umur dari individu.
-                - workclass: tipe dari pekerjaan individu l. Workclass ini berisi kategori seperti:
+                - Age: Umur dari individu.
+                - Workclass: Tipe dari pekerjaan individu. Workclass ini berisi kategori seperti:
                     - Private: Bekerja di sektor private.
                     - Self-emp-not-inc: Individu yang bekerja sendiri dan tidak tergabung dalam sebuah perusahaan.
                     - Self-emp-inc: Individu yang bekerja sendiri dan tergabung dalam sebuah perusahaan.
@@ -20,20 +20,20 @@ attribute_info = """
                     - State-gov: Bekerja pada pemerintahan negara bagian.
                     - Without-pay: Tidak bekerja atau bekerja tapi tidak diupah.
                     - Never-worked: Tidak pernah bekerja.
-                - education: Pendidikan Terakhir.
-                - education-num: Durasi dalam menyelesaikan pendidikan.
-                - marital-status: Status Pernikahan.
-                - occupation: Bidang pekerjaan atau jabatan.
-                - relationship: Status Hubungan.
-                - race: ras dari individu.
-                - sex: Gender dari individu.
-                - capital-gain: Jumlah keuntungan modal(financial profit).
-                - capital-loss: Jumlah kerugian modal.
-                - hours-per-week: Jumlah jam kerja per-minggu.
-                - native-country: Negara asal.
-                - income: Level gaji dari individu. terdiri dari 2 kategori yaitu gaji yang lebih dari 50,000 dollar dan gaji  yang kurang dari atau sama dengan  50,000 dollar, keduanya ditulis dengan (>50K, <=50K).
-                - Final Weight: The weights on the CPS files are controlled to independent estimates of the civilian noninstitutional population of the US. These are prepared monthly for us by Population Division here at the Census Bureau. We use 3 sets of controls.
-                 """
+                - Wducation: Pendidikan Terakhir.
+                - Education Number: Durasi dalam menyelesaikan pendidikan.
+                - Marital Status: Status Pernikahan.
+                - Occupation: Bidang pekerjaan atau jabatan.
+                - Relationship: Status Hubungan.
+                - Race: Ras dari individu.
+                - Gender: Gender dari individu.
+                - Capital Gain: Jumlah keuntungan modal(financial profit).
+                - Capital Loss: Jumlah kerugian modal.
+                - Hours per Week: Jumlah jam kerja per-minggu.
+                - Native Country: Negara asal.
+                - Final Weight: Bobot pada file CPS yang dikendalikan berdasarkan perkiraan independen terhadap populasi sipil non-institusional di AS. Ini dipersiapkan setiap bulan oleh Divisi Kependudukan di Biro Sensus, dengan menggunakan 3 set kontrol.
+                - Income: Level gaji dari individu. terdiri dari 2 kategori yaitu gaji yang lebih dari 50,000 dollar dan gaji yang kurang dari atau sama dengan 50,000 dollar, keduanya ditulis dengan (>50K, <=50K).
+                """
 
 
 def load_model(model_file):
@@ -42,7 +42,7 @@ def load_model(model_file):
 
 
 def run_ml_app():
-    st.subheader("ML Section")
+    st.subheader("Machine Learning Section")
     with st.expander("Attribute Info"):
         st.markdown(attribute_info)
 
@@ -52,7 +52,7 @@ def run_ml_app():
         workclass = st.selectbox("Workclass", ['State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov',
                                                'Other', 'Self-emp-inc', 'Without-pay', 'Never-worked'])
         finalWeight = st.number_input(
-            "Final Weight", min_value=0, step=1)
+            "Final Weight")
         education = st.selectbox("Education", ['Bachelors', 'HS-grad', '11th', 'Masters', '9th', 'Some-college', 'Assoc-acdm',
                                                'Assoc-voc', '7th-8th', 'Doctorate', 'Prof-school', '5th-6th', '10th', '1st-4th' 'Preschool' '12th'])
         educationNum = st.number_input(
@@ -68,9 +68,9 @@ def run_ml_app():
             "Race", ['White', 'Black', 'Asian-Pac-Islander', 'Amer-Indian-Eskimo', 'Other'])
         gender = st.radio('Gender', ['Male', 'Female'])
         capitalGain = st.number_input(
-            "Capital Gain", min_value=0, step=1)
+            "Capital Gain")
         capitalLoss = st.number_input(
-            "Capital Loss", min_value=0, step=1)
+            "Capital Loss")
         hoursPerWeek = st.number_input(
             "Hours per Week", 1, 99)
         nativeCountry = st.selectbox("Native Country", ['United-States', 'Cuba', 'Jamaica', 'India', 'Other', 'Mexico', 'South', 'Puerto-Rico',
@@ -100,7 +100,7 @@ def run_ml_app():
                 "Native Country": nativeCountry
             }
 
-        st.write(result)
+        # st.write(result)
 
         df4 = pd.read_csv(os.path.join('df4.csv'))
         data_baru = result
@@ -148,6 +148,12 @@ def run_ml_app():
         prediction = model.predict(single_array)
 
         if prediction == 0:
-            st.info("Hasil Prediksi Income : <= 50K")
+            st.info("""
+                Hasil Prediksi Income :\n
+                <= 50K [Gaji kurang dari atau sama dengan 50,000 dollar]
+                """)
         elif prediction == 1:
-            st.info("Hasil Prediksi Income : > 50K")
+            st.info("""
+                Hasil Prediksi Income :\n
+                > 50K [Gaji lebih dari 50,000 dollar]
+                """)
