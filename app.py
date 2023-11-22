@@ -50,14 +50,13 @@ def main():
                     """
                  )
         st.subheader('Final Project Fantastic Four')
-	# st.divider()
+        st.divider()
         choice = st.selectbox("Menu", menu)
 
     if choice == 'Home':
         st.subheader("Welcome to Homepage")
-	# st.write("---")
-	with st.container():
-		st.markdown(desc_temp)
+        with st.container():
+            st.markdown(desc_temp)
     elif choice == "Machine Learning":
         # st.subheader("Welcome to Machine learning")
         run_ml_app()
