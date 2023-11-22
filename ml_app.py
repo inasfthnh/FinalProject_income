@@ -82,7 +82,7 @@ def run_ml_app():
         submitted = st.form_submit_button("Submit")
 
     if submitted:
-        with st.expander("Your Selected Options"):
+        with st.expander("Variable dictionary..."):
             result = {
                 "Age": age,
                 "Workclass": workclass,
