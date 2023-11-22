@@ -50,12 +50,12 @@ def main():
                     """
                  )
         st.subheader('Final Project Fantastic Four')
-	# st.write("---")
+	st.write("---")
         choice = st.selectbox("Menu", menu)
 
     if choice == 'Home':
         st.subheader("Welcome to Homepage")
-	# st.write("---")
+	st.write("---")
         st.markdown(desc_temp)
     elif choice == "Machine Learning":
         # st.subheader("Welcome to Machine learning")
