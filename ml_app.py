@@ -100,7 +100,7 @@ def run_ml_app():
                 "Native Country": nativeCountry
             }
 
-        # st.write(result)
+        st.write(result)
 
         df4 = pd.read_csv(os.path.join('df4.csv'))
         data_baru = result
