@@ -5,15 +5,15 @@ import streamlit.components.v1 as stc
 from ml_app import run_ml_app
 
 html_temp = """
-            <div style="background-color:#808080;padding:10px;border-radius:10px">
-		    <h1 style="color:white;text-align:center;">Citizen Income Prediction App </h1>
+            <div style="background-color:#6F8FAF;padding:10px;border-radius:10px">
+		    <h1 style="color:white;text-align:center;">Citizens Income Prediction App </h1>
 		    <h2 style="color:white;text-align:center;">Census Bureau </h2>
-		    </div>
+	    </div>
             """
 
 desc_temp = """
             ### Citizen Income Prediction App
-            This app will be used for government to predict whether the citizen get income above or below 50K
+            This app will be used by the government to predict whether the personal income would be over 50K or not
             #### Data Source
             - https://www.kaggle.com/datasets/tawfikelmetwally/census-income-dataset
             #### App Content
@@ -49,11 +49,11 @@ def main():
                     </div>
                     """
                  )
-        st.write('Final Project Fantastic Four')
+        st.subheader('Final Project Fantastic Four', divider = grey)
         choice = st.selectbox("Menu", menu)
 
     if choice == 'Home':
-        st.subheader("Welcome to Homepage")
+        st.subheader("Welcome to Homepage", divider = grey)
         st.markdown(desc_temp)
     elif choice == "Machine Learning":
         # st.subheader("Welcome to Machine learning")
