@@ -45,7 +45,7 @@ def main():
                         }
                     </style>
                     <div class="circle-image">
-                        <img src="https://i.pinimg.com/originals/53/f0/38/53f03878e5e33cd473a02ab1af0064e1.jpg">
+                        <img src="https://stickersmag.com/wp-content/uploads/2018/03/50.png">
                     </div>
                     """
                  )
