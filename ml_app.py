@@ -52,7 +52,7 @@ def run_ml_app():
         workclass = st.selectbox("Workclass", ['State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov',
                                                'Other', 'Self-emp-inc', 'Without-pay', 'Never-worked'])
         finalWeight = st.number_input(
-            "Final Weight", min_value=0, value=int)
+            "Final Weight", min_value=0, value='int')
         education = st.selectbox("Education", ['Bachelors', 'HS-grad', '11th', 'Masters', '9th', 'Some-college', 'Assoc-acdm',
                                                'Assoc-voc', '7th-8th', 'Doctorate', 'Prof-school', '5th-6th', '10th', '1st-4th' 'Preschool' '12th'])
         educationNum = st.number_input(
