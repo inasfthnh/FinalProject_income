@@ -12,7 +12,7 @@ html_temp = """
             """
 
 desc_temp = """
-            ### Citizen Income Prediction App
+            ### Citizens Income Prediction App
             This app will be used by the government to predict whether the personal income would be over 50K or not
             #### Data Source
             - https://www.kaggle.com/datasets/tawfikelmetwally/census-income-dataset
@@ -50,13 +50,14 @@ def main():
                     """
                  )
         st.subheader('Final Project Fantastic Four')
-	st.write("---")
+	# st.divider()
         choice = st.selectbox("Menu", menu)
 
     if choice == 'Home':
         st.subheader("Welcome to Homepage")
-	st.write("---")
-        st.markdown(desc_temp)
+	# st.write("---")
+	with st.container():
+		st.markdown(desc_temp)
     elif choice == "Machine Learning":
         # st.subheader("Welcome to Machine learning")
         run_ml_app()
