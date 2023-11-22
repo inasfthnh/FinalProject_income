@@ -52,7 +52,7 @@ def run_ml_app():
         workclass = st.selectbox("Workclass", ['State-gov', 'Self-emp-not-inc', 'Private', 'Federal-gov', 'Local-gov',
                                                'Other', 'Self-emp-inc', 'Without-pay', 'Never-worked'])
         finalWeight = st.number_input(
-            "Final Weight")
+            "Final Weight", min_value=0, step=1)
         education = st.selectbox("Education", ['Bachelors', 'HS-grad', '11th', 'Masters', '9th', 'Some-college', 'Assoc-acdm',
                                                'Assoc-voc', '7th-8th', 'Doctorate', 'Prof-school', '5th-6th', '10th', '1st-4th' 'Preschool' '12th'])
         educationNum = st.number_input(
@@ -68,9 +68,9 @@ def run_ml_app():
             "Race", ['White', 'Black', 'Asian-Pac-Islander', 'Amer-Indian-Eskimo', 'Other'])
         gender = st.radio('Gender', ['Male', 'Female'])
         capitalGain = st.number_input(
-            "Capital Gain")
+            "Capital Gain", min_value=0, step=1)
         capitalLoss = st.number_input(
-            "Capital Loss")
+            "Capital Loss", min_value=0, step=1)
         hoursPerWeek = st.number_input(
             "Hours per Week", 1, 99)
         nativeCountry = st.selectbox("Native Country", ['United-States', 'Cuba', 'Jamaica', 'India', 'Other', 'Mexico', 'South', 'Puerto-Rico',
@@ -100,7 +100,7 @@ def run_ml_app():
                 "Native Country": nativeCountry
             }
 
-        # st.write(result)
+        st.write(result)
 
         df4 = pd.read_csv(os.path.join('df4.csv'))
         data_baru = result
