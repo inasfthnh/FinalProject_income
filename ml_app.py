@@ -32,7 +32,6 @@ attribute_info = """
                 - Hours per Week: Jumlah jam kerja per-minggu.
                 - Native Country: Negara asal.
                 - Final Weight: Bobot pada file CPS yang dikendalikan berdasarkan perkiraan independen terhadap populasi sipil non-institusional di AS. Ini dipersiapkan setiap bulan oleh Divisi Kependudukan di Biro Sensus, dengan menggunakan 3 set kontrol.
-                - Income: Level gaji dari individu. terdiri dari 2 kategori yaitu gaji yang lebih dari 50,000 dollar dan gaji yang kurang dari atau sama dengan 50,000 dollar, keduanya ditulis dengan (>50K, <=50K).
                 """
 
 
