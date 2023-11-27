@@ -20,7 +20,7 @@ attribute_info = """
                     - State-gov: Bekerja pada pemerintahan negara bagian.
                     - Without-pay: Tidak bekerja atau bekerja tapi tidak diupah.
                     - Never-worked: Tidak pernah bekerja.
-                - Wducation: Pendidikan Terakhir.
+                - Education: Pendidikan Terakhir.
                 - Education Number: Durasi dalam menyelesaikan pendidikan.
                 - Marital Status: Status Pernikahan.
                 - Occupation: Bidang pekerjaan atau jabatan.
